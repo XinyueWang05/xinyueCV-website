@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>CV | Xinyue Wang</title>
+  <style>
+    :root{
+      --uh-blue:#6fa8dc;
+      --uh-blue-2:#8ec5f4;
+      --ink:#111;
+      --muted:#444;
+      --bg:#ffffff;
+      --panel:#f5f9ff;
+      --line:#d7e6f7;
+      --max: 1180px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
+      color:var(--ink);
+      background:var(--bg);
+    }
+
+    .topbar{
+      height:28px;
+      background: linear-gradient(90deg, var(--uh-blue), var(--uh-blue-2));
+      color:#fff;
+      display:flex;
+      align-items:center;
+    }
+    .topbar .inner{
+      width:min(var(--max), calc(100% - 32px));
+      margin:0 auto;
+      display:flex;
+      justify-content:flex-end;
+      font-size:13px;
+      font-style:italic;
+      opacity:.95;
+    }
+
+    .header{
+      width:min(var(--max), calc(100% - 32px));
+      margin:18px auto 0;
+      display:grid;
+      grid-template-columns: 320px 1fr;
+      gap:28px;
+      align-items:start;
+    }
+    .photo{
+      width:320px;
+      height:180px;
+      background: #e9ecf6;
+      border:1px solid var(--line);
+      overflow:hidden;
+    }
+    .photo img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+
+    .info{padding-top:10px;}
+    .name{
+      font-size:28px;
+      margin:0;
+      font-weight:600;
+    }
+    .role{
+      margin:8px 0 10px;
+      font-size:15px;
+      color:var(--muted);
+      font-style:italic;
+    }
+
+    .areas{
+      margin: 0 0 14px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-size:12.5px;
+      color:#1e2a4a;
+    }
+    .tag{
+      padding:6px 10px;
+      border-radius:999px;
+      border:1px solid var(--line);
+      background:#f7fbff;
+      line-height:1;
+      white-space:nowrap;
+    }
+
+    .addr{
+      font-size:14px;
+      color:#222;
+      line-height:1.4;
+      white-space:pre-line;
+    }
+    .addr em{font-style:italic}
+
+    .navwrap{
+      width:min(var(--max), calc(100% - 32px));
+      margin:18px auto 0;
+      border-top:6px solid var(--uh-blue);
+      border-bottom:6px solid #bdbdbd;
+      background:#fff;
+      padding:10px 0;
+    }
+    .nav{
+      display:grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap:10px;
+    }
+    .tab{
+      background: var(--uh-blue);
+      color:#fff;
+      text-align:center;
+      padding:12px 10px;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial;
+      font-weight:700;
+      letter-spacing:.3px;
+      text-transform:uppercase;
+      font-size:13px;
+      border: 2px solid #ffffff;
+      cursor:pointer;
+      user-select:none;
+    }
+    .tab.active{
+      outline: 3px solid rgba(10,42,138,.25);
+      transform: translateY(-1px);
+    }
+
+    main{
+      width:min(var(--max), calc(100% - 32px));
+      margin: 18px auto 44px;
+      border:1px solid var(--line);
+      background: var(--panel);
+    }
+    .section{
+      display:none;
+      padding: 22px 24px;
+      background:#fff;
+    }
+    .section.active{display:block}
+
+    h2{
+      margin:0 0 12px;
+      font-size:18px;
+      border-bottom:1px solid var(--line);
+      padding-bottom:10px;
+    }
+    h3{
+      margin:18px 0 8px;
+      font-size:15px;
+    }
+    p,li{font-size:14px; line-height:1.55; color:#222}
+    ul{margin:8px 0 0 18px}
+    .muted{color:var(--muted)}
+
+    .two{
+      display:grid;
+      grid-template-columns: 1fr 1fr;
+      gap:22px;
+    }
+
+    a{color:#0b2fa7; text-decoration:none}
+    a:hover{text-decoration:underline}
+
+    @media (max-width: 920px){
+      .header{grid-template-columns: 1fr;}
+      .photo{width:100%; height:220px;}
+      .nav{grid-template-columns: 1fr;}
+      .two{grid-template-columns:1fr}
+    }
+
+    @media print{
+      .topbar, .navwrap{display:none !important}
+      main{border:none}
+      .section{display:block !important; page-break-inside:avoid}
+      body{background:#fff}
+    }
+  </style>
+</head>
+<body>
+  <div class="topbar">
+    <div class="inner">Department of Climate and Space Sciences and Engineering</div>
+  </div>
+
+  <div class="header">
+    <div class="photo" aria-label="Profile photo">
+      <img src="photo.jpg" alt="Xinyue Wang" onerror="this.style.display='none'" />
+    </div>
+
+    <div class="info">
+      <h1 class="name">Xinyue Wang</h1>
+      <div class="role">Postdoctoral Researcher, Department of Climate and Space Sciences, University of Michigan</div>
+
+      <div class="areas" aria-label="Research areas">
+        <span class="tag">Planetary energy balance</span>
+        <span class="tag">Giant planet internal heat</span>
+        <span class="tag">Atmospheric dynamics</span>
+        <span class="tag">Radiative transfer</span>
+        <span class="tag">Trace gases &amp; carbon cycle</span>
+      </div>
+
+      <div class="addr">
+        <em>Department of Climate and Space Sciences, University of Michigan</em>
+
+        Email: <a href="mailto:xinyuewa@umich.edu">xinywang21@gmail.com</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="navwrap" role="navigation" aria-label="Site navigation">
+    <div class="nav">
+      <div class="tab active" data-target="research">Research / 研究</div>
+      <div class="tab" data-target="publications">Publications</div>
+      <div class="tab" data-target="cv">CV / 简历</div>
+    </div>
+  </div>
+
+  <main>
+    <section class="section active" id="research">
+      <h2>Research &amp; Teaching</h2>
+
+      <div class="two">
+        <div style="background:#f7fbff;border:1px solid var(--line);padding:16px;border-radius:6px;">
+          <h3>Research</h3>
+          <p>
+            My research focuses on radiant energy budget, internal heat, and atmospheric dynamics of terrestrial and giant planets, as well as climate change, greenhouse and trace gases, wildfires, carbon cycle, and atmospheric energetics.
+          </p>
+
+          <h3>Research Interests</h3>
+          <ul>
+            <li><b>Planetary Science:</b> radiant energy budget, internal heat, and atmospheric dynamics of terrestrial and giant planets</li>
+            <li><b>Atmospheric and Environmental Sciences:</b> climate change, greenhouse/trace gases, wildfires, carbon cycle, and atmospheric energetics</li>
+          </ul>
+
+          <h3>Research Experience</h3>
+          <ul>
+            <li><b>2025–Present</b> Postdoctoral Researcher (Research Fellow)</li>
+            <li>Department of Climate and Space Sciences, University of Michigan, Ann Arbor, Michigan</li>
+            <li>Postdoctoral Advisor: Prof. Li Cheng (<a href="https://clasp.engin.umich.edu/people/li-cheng/">website</a>)</li>
+          </ul>
+
+          <h3>Teaching Experience</h3>
+          <ul>
+            <li><b>Teaching Assistant for Introduction to Meteorology</b>, University of Houston (2022)</li>
+            <li>Graded exams and extra credit assignments</li>
+            <li>Proctored exams for lecture class</li>
+          </ul>
+        </div>
+
+        <div style="background:#f7fbff;border:1px solid var(--line);padding:16px;border-radius:6px;">
+          <h3>研究方向</h3>
+          <p>
+            主要研究行星大气、行星系统辐射能量收支、巨行星内部热源以及大气动力学过程，同时关注地球系统科学中的碳循环与痕量气体问题。
+          </p>
+
+          <h3>研究兴趣</h3>
+          <ul>
+            <li>行星辐射能量收支与内部热</li>
+            <li>巨行星大气动力学</li>
+            <li>辐射传输与行星气候</li>
+            <li>地球系统科学：碳循环与温室气体</li>
+          </ul>
+
+          <h3>研究经历</h3>
+          <ul>
+            <li><b>2025–至今</b> 博士后研究员</li>
+            <li>密歇根大学 气候与空间科学系</li>
+            <li>合作导师：李成教授 (<a href="https://clasp.engin.umich.edu/people/li-cheng/">个人主页</a>)</li>
+          </ul>
+
+          <h3>教学经历</h3>
+          <ul>
+            <li>助教，美国休斯敦大学 (2022)</li>
+            <li>批改考试与额外加分作业</li>
+            <li>监考</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="publications">
+      <h2>Publications</h2>
+      <p class="muted" style="margin-top:0;">Grouped by year (like Google Scholar).</p>
+      <div id="pubContainer"></div>
+    </section>
+
+    <section class="section" id="cv">
+      <h2>CV / 简历</h2>
+
+      <div class="two">
+        <div style="background:#f7fbff;border:1px solid var(--line);padding:16px;border-radius:6px;">
+          <h3>Education</h3>
+          <ul>
+            <li><b>Ph.D. in Atmospheric and Planetary Sciences</b>, Department of Earth and Atmospheric Science, University of Houston, Houston, Texas, USA, 2022–2025</li>
+            <li>Cumulative GPA: 3.96 / 4.0</li>
+            <li><b>B.S. in Electronic Information Engineering</b>, Department of Electronic Engineering, Guilin Institute of Information Technology, China, 2016–2020</li>
+          </ul>
+
+          <h3>Honors / Awards</h3>
+          <ul>
+            <li>2024 Outstanding Academic Achievement Award in Atmospheric Science (University of Houston)</li>
+            <li>2024 Travel grant for attending Uranus-Mission workshop (NASA, Washington, D.C.)</li>
+            <li>2023 Travel grant for attending the First Texas Area Planetary Science Meeting (University of Texas, San Antonio)</li>
+            <li>2023 Outstanding Academic Achievement Award in Atmospheric Science (University of Houston)</li>
+            <li>2022 Summer research internship at Lunar and Planetary Science Institute (Houston, TX)</li>
+            <li>2020 Second prize of Outstanding Students (Institute of Information Technology)</li>
+            <li>2018 Certificate of Senior Engineer Level of Computer Science CAD</li>
+            <li>2018 Certificate of Erhu performance level VI</li>
+          </ul>
+
+          <h3>Research Experience</h3>
+          <ul>
+            <li><b>2025–Present</b> Postdoctoral Researcher (Research Fellow)</li>
+            <li>Department of Climate and Space Sciences, University of Michigan, Ann Arbor, Michigan</li>
+            <li>Postdoctoral Advisor: Prof. Li Cheng (<a href="https://clasp.engin.umich.edu/people/li-cheng/">website</a>)</li>
+          </ul>
+
+          <h3>Teaching Experience</h3>
+          <ul>
+            <li><b>Teaching Assistant for Introduction to Meteorology</b>, University of Houston (2022)</li>
+            <li>Graded exams and extra credit assignments</li>
+            <li>Proctored exams for lecture class</li>
+          </ul>
+
+          <h3>Invited Talks</h3>
+          <ol>
+            <li>Wang, X., Energy Budgets and Internal Heat of Giant Planets, Ice Giant Systems Seminar Series, Johns Hopkins University Applied Physics Laboratory, February 3, 2026.</li>
+            <li>Wang, X., L. Li, M. Roman, X. Zhang, X. Jiang, P. Fry, C. Li, G. Milcareck, A. Sanchez‐Lavega, S. Perez‐Hoyos, R. Hueso, T. Guillot, C. Nixon, U. Dyudina, R. West &amp; M. Kenyon, Internal Heat Flux and Energy Imbalance of Uranus (Oral Presentation), AGU Fall Meeting, Dec 15–19, 2025.</li>
+          </ol>
+
+          <h3>Conferences</h3>
+          <ol>
+            <li>Wang, X., L. Li, X. Jiang, P. Fry, R. A. West, C. A. Nixon, T. D. Karandana Gamalathge, R. Albright, J. E. Colwell, T. Guillot, M. Hofstadter, M. E. Kenyon, A. Mallama, L. Guan, S. Perez-Hoyos, A. Sanchez-Lavega, A. Simon, D. Wenkert, and X. Zhang, Global Energy Imbalance and Internal Heat of Saturn (Oral Presentation), AGU Fall Meeting, Dec 9–13, 2024.</li>
+            <li>Guan, L., X. Wang, X. Jiang, L. Li, Impacts of El Nino-Southern Oscillation on Earth’s Radiant Energy Budget, Second Texas Area Planetary Sciences (TAPS) meeting, August 2024.</li>
+            <li>Guan, L., L. Li, X. Jiang, X. Wang, E. Creecy, M. Kenyon, G. Martinez, The distinct energy budgets of Mars and Earth, First Texas Area Planetary Sciences (TAPS) meeting, July 17, 2023.</li>
+            <li>Karandana Gamalathge, T. D., N. Tai, X. Jiang, X. Wang, and L. Li, The impact of California wildfires on CO2 and other trace gases, AGU Fall Meeting, Dec 11–15, 2023.</li>
+            <li>Wang, X., X. Jiang, K. F. Li, M. C. Liang, L. Tan, Exploring Carbonyl Sulfide variations across the Amazon during the dry and wet seasons using satellite data and model simulation, AGU Fall Meeting, Dec 11–15, 2023.</li>
+            <li>Li, L., X. Jiang, P. M. Fry, R. A. West, C. A. Nixon, X. Wang, L. Guan, J. E. Colwell, T. Guillot, M. D. Hofstadter, M. E. Kenyon, A. Mallama, S. Perez-Hoyos, A. Sanchez-Lavega, A. Simon, D. Wenkert, Radiant energy budgets and internal heat of giant planets, Uranus Flagship 2023 Workshop, July 25–27, 2023.</li>
+          </ol>
+
+          <h3>Volunteer Work</h3>
+          <ul>
+            <li><b>The Lighthouse of Houston</b> (2023)</li>
+            <li>The Lighthouse is a nonprofit education and service center for the blind and visually impaired.</li>
+            <li>When volunteering, I assisted with cooking, trivia, and other daily activities.</li>
+          </ul>
+        </div>
+
+        <div style="background:#f7fbff;border:1px solid var(--line);padding:16px;border-radius:6px;">
+          <h3>教育背景</h3>
+          <ul>
+            <li><b>大气环境与行星科学博士</b>，美国休斯敦大学，2022–2025</li>
+            <li>GPA：3.96 / 4.0</li>
+            <li><b>电子信息工程学士</b>，桂林信息科技学院，2016–2020</li>
+          </ul>
+
+          <h3>荣誉与奖励</h3>
+          <ul>
+            <li>2024 大气科学杰出学术成就奖（休斯顿大学）</li>
+            <li>2024 参加天王星任务研讨会旅行资助（NASA，华盛顿特区）</li>
+            <li>2023 参加第一届德州地区行星科学会议旅行资助（德州大学圣安东尼奥分校）</li>
+            <li>2023 大气科学杰出学术成就奖（休斯顿大学）</li>
+            <li>2022 美国月球与行星科学研究所暑期科研实习（休斯顿，德州）</li>
+            <li>2020 优秀学生二等奖（桂林信息科技学院）</li>
+            <li>2018 计算机科学 CAD 高级工程师证书</li>
+          </ul>
+
+          <h3>研究经历</h3>
+          <ul>
+            <li><b>2025–至今</b> 博士后研究员</li>
+            <li>密歇根大学 气候与空间科学系</li>
+            <li>合作导师：李成教授 (<a href="https://clasp.engin.umich.edu/people/li-cheng/">个人主页</a>)</li>
+          </ul>
+
+          <h3>教学经历</h3>
+          <ul>
+            <li><b>2022</b> 美国休斯敦大学《气象学导论》课程助教</li>
+            <li>批改考试与额外加分作业</li>
+            <li>监考</li>
+          </ul>
+
+          <h3>受邀报告</h3>
+          <ol>
+            <li>王馨月，巨行星的辐射能量和内部热源，冰巨星系统研讨会，约翰斯·霍普金斯大学应用物理实验室，2026 年 2 月 3 日。</li>
+            <li>王馨月等，天王星的热通量与能量失衡（口头报告），AGU 秋季会议，2025 年 12 月 15–19 日。</li>
+          </ol>
+
+          <h3>会议报告</h3>
+          <ol>
+            <li>王馨月等，土星的全球能量失衡与内部热（口头报告），AGU 秋季会议，2024 年 12 月 9–13 日。</li>
+            <li>Guan, L., 王馨月等，El Niño–Southern Oscillation 对地球辐射能量预算的影响，第二届德州行星科学会议，2024 年 8 月。</li>
+            <li>Guan, L. 等，火星和地球的不同能量预算，第一届德州行星科学会议，2023 年 7 月 17 日。</li>
+            <li>Karandana Gamalathge, T. D. 等，加州野火对二氧化碳及其他痕量气体的影响，AGU 秋季会议，2023 年 12 月 11–15 日。</li>
+            <li>王馨月等，利用卫星数据和模型模拟探索亚马逊干湿季节碳酰基硫的变化，AGU 秋季会议，2023 年 12 月 11–15 日。</li>
+            <li>Li, L. 等，巨行星的辐射能量预算与内部热量，Uranus Flagship 2023 Workshop，2023 年 7 月 25–27 日。</li>
+          </ol>
+
+          <h3>志愿服务</h3>
+          <ul>
+            <li><b>The Lighthouse of Houston</b>（2023）</li>
+            <li>该机构致力于为视障人士提供教育和服务。</li>
+            <li>志愿活动包括协助烹饪、知识竞赛及其他日常事务。</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const tabs = Array.from(document.querySelectorAll('.tab'));
+    const sections = Array.from(document.querySelectorAll('.section'));
+
+    function show(id){
+      sections.forEach(s => s.classList.toggle('active', s.id === id));
+      tabs.forEach(t => t.classList.toggle('active', t.dataset.target === id));
+      history.replaceState(null, '', '#' + id);
+    }
+
+    tabs.forEach(t => t.addEventListener('click', () => show(t.dataset.target)));
+
+    const initial = (location.hash || '').replace('#','');
+    if(initial && sections.some(s => s.id === initial)) show(initial);
+
+    const publications = [
+      {
+        year: 2026,
+        status: 'Published',
+        html: 'Noor, S., Jiang, X., Wang, X., Yang, J., Newman, S., Li, K.-F., Li, L., Yu, L., Li, X., &amp; Yung, Y. L. (2026). Human-induced biospheric carbon sink: Impact of the Taklamakan Afforestation Project. <i>Proceedings of the National Academy of Sciences (PNAS)</i>, U.S.A. 123(4), e2523388123. <a href="https://doi.org/10.1073/pnas.2523388123">https://doi.org/10.1073/pnas.2523388123</a>.'
+      },
+      {
+        year: 2025,
+        status: 'Submitted',
+        html: 'Wang, X., A. Tai, X. Jiang, S. Noor, Y. Liu, L. Tan, Y. Wang, K-F. Li, L. Li, Y. L. Yung (2025). Greener Sahara Desert: A Carbon Sink in Wet Season. <i>Journal of Geophysical Research: Atmospheres</i>, submitted.'
+      },
+      {
+        year: 2025,
+        status: 'Accepted',
+        html: 'Wang, X., Li, L., Fry, P., Jiang, X., Li, C., Hueso, R., Morales-Juberías, R., Sánchez-Lavega, A., Simon, A. (2025). The Vortex Generated from Saturn’s 2010 Giant Convective Storm. <i>Journal of Geophysical Research: Planets</i>, accepted.'
+      },
+      {
+        year: 2025,
+        status: 'Published',
+        html: 'Wang, X., Li, L., Roman, M. T., Zhang, X., Jiang, X., Fry, P. M., Li, C., Milcareck, G., Sánchez-Lavega, A., Pérez-Hoyos, S., Hueso, R., Guillot, T., Nixon, C. A., Dyudina, U. A., West, R. A., &amp; Kenyon, M. E. (2025). Internal heat flux and energy imbalance of Uranus. <i>Geophysical Research Letters</i>, 52, e2025GL115660. <a href="https://doi.org/10.1029/2025GL115660">https://doi.org/10.1029/2025GL115660</a>. Reported by media including <a href="https://www.sciencenews.org/article/uranus-energy-planet-sun">Science News</a> and <a href="https://www.planetary.org/planetary-radio/2025-uranus-energy-balance">Planetary Radio</a>.'
+      },
+      {
+        year: 2025,
+        status: 'Published',
+        html: 'Guan, L., Wang, X., Jiang, X., Li, L., &amp; Sánchez-Lavega, A. (2025). Impacts of El Niño–Southern Oscillation on Earth’s radiant energy budget. <i>Journal of Geophysical Research: Atmospheres</i>, 130, e2024JD042611. <a href="https://doi.org/10.1029/2024JD042611">https://doi.org/10.1029/2024JD042611</a>.'
+      },
+      {
+        year: 2025,
+        status: 'Published',
+        html: 'Wang, X., Li, L., Jiang, X., Fry, P. M., Guan, L., Pérez-Hoyos, S., Sánchez-Lavega, A., Simon, A. A., &amp; Fletcher, L. N. (2025). Spatiotemporal variability of zonal winds in Saturn’s upper troposphere. <i>Journal of Geophysical Research: Planets</i>, 130, e2024JE008515. <a href="https://doi.org/10.1029/2024JE008515">https://doi.org/10.1029/2024JE008515</a>.'
+      },
+      {
+        year: 2025,
+        status: 'Published',
+        html: 'Wang, X., Li, L., Jiang, X., &amp; West, R. A. (2025). Multi-wavelength global maps of Jupiter and Saturn using Cassini Imaging Science Subsystem data. <i>Scientific Data</i>, 12, 439. <a href="https://doi.org/10.1038/s41597-025-04392-3">https://doi.org/10.1038/s41597-025-04392-3</a>.'
+      },
+      {
+        year: 2024,
+        status: 'Published',
+        html: 'Guan, L., Li, L., Creecy, E. C., Jiang, X., Wang, X., Martinez, G., Toigo, A. D., Richardson, M. I., Sánchez-Lavega, A., &amp; Lee, Y. J. (2024). Distinct energy budgets of Mars and Earth. <i>AGU Advances</i>, 5, e2024AV001389. <a href="https://doi.org/10.1029/2024AV001389">https://doi.org/10.1029/2024AV001389</a>. This study was widely reported by Phys.org, Astrobiology News, ScienceDaily, and Mars Daily, and was highlighted by EOS.'
+      },
+      {
+        year: 2024,
+        status: 'Published',
+        html: 'Gamalathge, T. D., Tai, N., Jiang, X., X. Wang, Li, L., &amp; Yung, Y. L. (2024). Impacts of California wildfires on CO2 and other trace gases. <i>Geophysical Research Letters</i>, 51, e2024GL109352. <a href="https://doi.org/10.1029/2024GL109352">https://doi.org/10.1029/2024GL109352</a>.'
+      },
+      {
+        year: 2024,
+        status: 'Published',
+        html: 'Wang, X., Li, L., Jiang, X., Fry, P. M., West, R. A., Nixon, C. A., Guan, L., Karandana, T. D., Albright, R., Colwell, J. E., Guillot, T., Hofstadter, M. D., Kenyon, M. E., Mallama, A., Pérez-Hoyos, S., Sánchez-Lavega, A., Simon, A. A., Wenkert, D. D., &amp; Zhang, X. (2024). Cassini spacecraft reveals global energy imbalance of Saturn. <i>Nature Communications</i>, 15, 8969. <a href="https://doi.org/10.1038/s41467-024-48969-9">https://doi.org/10.1038/s41467-024-48969-9</a>. Reported by media including Space.com, Phys.org, ScienceAlert, Earth.com, and Universe Magazine.'
+      },
+      {
+        year: 2023,
+        status: 'Published',
+        html: 'Albright, R. J., Karandana Gamalathge, T. D., Wang, X., Jiang, X., &amp; Li, L. (2023). Impact of El Niño–Southern Oscillation on CO2 and solar-induced fluorescence over the Indo-Pacific region. <i>Earth and Space Science</i>, 10, e2023EA003126. <a href="https://doi.org/10.1029/2023EA003126">https://doi.org/10.1029/2023EA003126</a>.'
+      },
+      {
+        year: 2023,
+        status: 'Published',
+        html: 'Li, L., Guan, S., Luu, C., Heng, K., Fry, P. M., Creecy, E. C., Wang, X., Albright, R. J., Jiang, X., West, R. A., Nixon, C. R., Kenyon, M. E., Hendrix, A. R., &amp; Dyudina, U. A. (2023). The bolometric Bond albedo of Enceladus. <i>Icarus</i>, 401, 115429. <a href="https://doi.org/10.1016/j.icarus.2023.115429">https://doi.org/10.1016/j.icarus.2023.115429</a>.'
+      },
+      {
+        year: 2023,
+        status: 'Published',
+        html: 'Jiang, X., Albright, R., Creecy, E., Li, K., Liang, M., Newman, S., Wang, X., Karandana Gamalathge, T. D., &amp; Yung, Y. L. (2023). Congo Basin rainforest is a net carbon source during the dry season. <i>Earth and Space Science</i>, 10, e2022EA002644. <a href="https://doi.org/10.1029/2022EA002644">https://doi.org/10.1029/2022EA002644</a>.'
+      },
+      {
+        year: 2023,
+        status: 'Published',
+        html: 'Wang, X., Jiang, X., Li, K., Liang, M., Kuai, L., Tan, L., &amp; Yung, Y. L. (2023). Variations of carbonyl sulfide during the dry/wet seasons over the Amazon. <i>Geophysical Research Letters</i>, 50, e2022GL101717. <a href="https://doi.org/10.1029/2022GL101717">https://doi.org/10.1029/2022GL101717</a>.'
+      },
+      {
+        year: 2017,
+        status: 'Published',
+        html: 'Pan, Y., L. Li, X. Jiang, G. Li, W. Zhang, X. Wang, and A. P. Ingersoll (2017). Earth’s varying global atmospheric energy cycle in response to climate change. <i>Nature Communications</i>, 8, 14367. <a href="https://doi.org/10.1038/ncomms14367">https://doi.org/10.1038/ncomms14367</a>. Reported by ScienceDaily, AccuWeather, Science Magazine, Environmental News Network, and NASA Astrobiology Magazine.'
+      }
+    ];
+
+    const statusOrder = { Published: 1, Accepted: 2, Submitted: 3 };
+
+    function renderPublications(){
+      const container = document.getElementById('pubContainer');
+      if(!container) return;
+
+      const byYear = new Map();
+      publications.forEach(p => {
+        if(!byYear.has(p.year)) byYear.set(p.year, []);
+        byYear.get(p.year).push(p);
+      });
+
+      const years = Array.from(byYear.keys()).sort((a,b) => b-a);
+      const frag = document.createDocumentFragment();
+
+      years.forEach(y => {
+        const items = byYear.get(y).slice().sort(
+          (a,b) => (statusOrder[a.status] || 9) - (statusOrder[b.status] || 9)
+        );
+
+        const h3 = document.createElement('h3');
+        h3.textContent = String(y);
+        frag.appendChild(h3);
+
+        const groups = new Map();
+        items.forEach(it => {
+          if(!groups.has(it.status)) groups.set(it.status, []);
+          groups.get(it.status).push(it);
+        });
+
+        ['Published','Accepted','Submitted'].forEach(st => {
+          if(!groups.has(st)) return;
+
+          const sub = document.createElement('div');
+          sub.style.margin = '6px 0 12px';
+
+          const label = document.createElement('div');
+          label.className = 'muted';
+          label.style.fontFamily = 'ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial';
+          label.style.fontSize = '12.5px';
+          label.style.margin = '0 0 6px';
+          label.textContent = st;
+          sub.appendChild(label);
+
+          const ol = document.createElement('ol');
+          ol.style.margin = '0 0 0 20px';
+          ol.style.padding = '0';
+
+          groups.get(st).forEach(it => {
+            const li = document.createElement('li');
+            li.innerHTML = it.html;
+            li.style.margin = '6px 0';
+            ol.appendChild(li);
+          });
+
+          sub.appendChild(ol);
+          frag.appendChild(sub);
+        });
+      });
+
+      container.innerHTML = '';
+      container.appendChild(frag);
+    }
+
+    renderPublications();
+  </script>
+</body>
+</html>
